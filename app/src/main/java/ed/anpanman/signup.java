@@ -34,6 +34,7 @@ public class signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
+
         skip=(Button)findViewById(R.id.btnskip);
         havacc=(Button)findViewById(R.id.btn_havacc);
         btnmake=(Button)findViewById(R.id.btn_mack_account);
@@ -48,6 +49,55 @@ public class signup extends AppCompatActivity {
         atg3 = AnimationUtils.loadAnimation(this, R.anim.atg3);
         atg4 = AnimationUtils.loadAnimation(this, R.anim.atg4);
         atg5 = AnimationUtils.loadAnimation(this, R.anim.atg5);
+        btnmake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               final  String email=mail.getText().toString().trim();
+                final String pass=pswd.getText().toString().trim();
+               final String confirm=cpswd.getText().toString().trim();
+try {
+    if (TextUtils.isEmpty(email)) {
+        Toast.makeText(signup.this, "please enter email", Toast.LENGTH_LONG).show();
+
+    }
+    if (TextUtils.isEmpty(pass)) {
+        Toast.makeText(signup.this, "please enter Password", Toast.LENGTH_LONG).show();
+
+    }
+    if (TextUtils.isEmpty(confirm)) {
+        Toast.makeText(signup.this, "please confirm password", Toast.LENGTH_LONG).show();
+
+    }
+    if (pass.equals(confirm)) {
+
+        mAuth.createUserWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(signup.this, "Registration Complete", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(signup.this, Home.class);
+                            startActivity(intent);
+                            finish();
+
+
+                        } else {
+
+                            Toast.makeText(signup.this, "Registration failed", Toast.LENGTH_LONG).show();
+                            Log.v("error", task.getResult().toString());
+                        }
+
+                    }
+                });
+    }
+}
+              catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+        });
 
        havacc.setOnClickListener(new View.OnClickListener()
         {
@@ -66,43 +116,6 @@ public class signup extends AppCompatActivity {
                 Intent it = new Intent(signup.this, Home.class);
                 startActivity(it);
 
-            }
-        });
-        btnmake.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email=mail.getText().toString().trim();
-                String pass=pswd.getText().toString().trim();
-                String confirm=cpswd.getText().toString().trim();
-
-                if(TextUtils.isEmpty(email)) {
-                    Toast.makeText(signup.this, "please enter email", Toast.LENGTH_LONG);
-                    return;
-                }
-                if(TextUtils.isEmpty(pass)) {
-                    Toast.makeText(signup.this, "please enter Password", Toast.LENGTH_LONG);
-                    return;
-                }
-                if(TextUtils.isEmpty(confirm)) {
-                    Toast.makeText(signup.this, "please confirm password", Toast.LENGTH_LONG);
-                    return;
-                }
-                if (pass.equals(confirm))
-                {
-                    mAuth.createUserWithEmailAndPassword(email, pass)
-                            .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                       startActivity(new Intent(getApplicationContext(),Home.class));
-                                        Toast.makeText(signup.this, "Registration Complete", Toast.LENGTH_LONG);
-                                    } else {
-                                        Toast.makeText(signup.this, "Registration failed", Toast.LENGTH_LONG);
-                                    }
-
-                                        }
-                            });
-                }
             }
         });
 
