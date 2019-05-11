@@ -122,11 +122,11 @@
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="app_login">تسجبل الدخول</string>
-    <string name="regster">تسجبل </string>
+    <string name="regster">تسجيل </string>
     <string name="login_input">تسجيل</string>
     <string name="skip">تخطى</string>
     <string name="lessons">Lessons</string>
-     <string name="lesson">الدروس</string>
+    <string name="lesson">الدروس</string>
     <string name="profile"> ضبط الصفحة الشخصية </string>
     <string name="studentname1">محمد احمد</string>
     <string name="score">عدد النقاط</string>
@@ -147,9 +147,13 @@
     <string name="chemical">الكيمياء</string>
     <string name="hlessons">الوحدة الاولى :\n الدرس الاول \n االدرس الثانى </string>
     <string name="clessons"> الوحدة الاولى :\n الدرس الاول \n الوحدة التانيه: \n الدرس الاول</string>
-<string name="question">ما هو ناتج تفاعل حمض مع قلوى؟</string>
+    <string name="question">ما هو ناتج تفاعل حمض مع قلوى؟</string>
     <string name="answer1">حمض</string>
-<string name="answer2">متعادل</string>
+    <string name="answer2">متعادل</string>
     <string name="answer3">ملح</string>
     <string name="finshed">انتهيت</string>
+    <string name="welcome">اهلا بك فى انبان</string>
+    <string name="homepage">الصفحة الرئيسية </string>
+    <string name="logout"> تسجيل الخروج  </string>
+<string name="anpan"> أنبان </string>
 </resources>
