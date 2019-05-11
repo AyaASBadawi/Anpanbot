@@ -100,7 +100,6 @@
             android:layout_height="60dp"
             android:autofillHints=""
             android:ems="18"
-            android:gravity="end"
             android:hint="@string/confirm"
             android:inputType="textPassword"
             android:paddingRight="30dp"

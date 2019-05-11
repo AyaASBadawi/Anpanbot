@@ -42,6 +42,7 @@
         android:layout_marginTop="48dp"
 
 
+        android:text="@string/studentname1"
         android:textColor="#FFF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -267,10 +268,10 @@
         app:bmb_rotateDegree="25"
         app:bmb_shadowEffect="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.92" />
 
 </android.support.constraint.ConstraintLayout>

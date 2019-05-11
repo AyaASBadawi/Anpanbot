@@ -33,7 +33,6 @@
             android:src="@drawable/userpic" />
 
         <TextView
-            android:id="@+id/profileUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -41,7 +40,6 @@
             android:text="@string/studentname1"
             android:textColor="#fff"
             android:textSize="21sp"
-            android:layout_below="@id/imageView"
             android:textStyle="bold" />
     </LinearLayout>
 

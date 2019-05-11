@@ -110,7 +110,7 @@ public class Start extends AppCompatActivity {
                    nextbtn.setOnClickListener(new View.OnClickListener() {
                        @Override
                        public void onClick(View v) {
-                           Intent it=new Intent(Start.this,parent.class);
+                           Intent it=new Intent(Start.this,login.class);
                            startActivity(it);
 
                        }
